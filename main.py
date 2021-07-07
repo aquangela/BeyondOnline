@@ -9,12 +9,13 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 from functools import wraps
-import smtplib
+# import smtplib
+from flask_mail import Mail, Message
 import os
 
-my_email = 'codingclass100days@gmail.com'
-my_password = 'Hello123,./'
-smtplib.SMTP("smtp.gmail.com", port=587)
+# my_email = 'codingclass100days@gmail.com'
+# my_password = 'Hello123,./'
+# smtplib.SMTP("smtp.gmail.com", port=587)
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
@@ -28,6 +29,16 @@ gravatar = Gravatar(app,
                     force_lower=False,
                     use_ssl=False,
                     base_url=None)
+app.config.update(dict(
+    DEBUG=True,
+    MAIL_SERVER='smtp.gmail.com',
+    MAILI_PORT=587,
+    MAIL_USE_TLS=True,
+    MAIL_USE_SSL=False,
+    MAIL_USERNAME='codingclass100days@gmail.com',
+    MAIL_PASSWORD='Hello123,./',
+))
+mail = Mail(app)
 
 ##CONNECT TO DB
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
@@ -186,16 +197,19 @@ def about():
 def contact():
     if request.method == 'POST':
         data = request.form
-        contents = f"Name: {data['name']}\nEmail: {data['email']}\nMessage: {data['message']}"
-        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-        server.ehlo()
-        server.login(user=my_email, password=my_password)
-        server.sendmail(
-            from_addr=my_email,
-            to_addrs=my_email,
-            msg=f'Subject: New Contact!\n\n{contents}'
-        )
-        server.close()
+        contents = Message('Hello', sender='codingclass100days@gmail.com', recipients='codingclass100days@gmail.com')
+        contents.body = f"Name: {data['name']}\nEmail: {data['email']}\nMessage: {data['message']}"
+        mail.send(contents)
+        # contents = f"Name: {data['name']}\nEmail: {data['email']}\nMessage: {data['message']}"
+        # server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        # server.ehlo()
+        # server.login(user=my_email, password=my_password)
+        # server.sendmail(
+        #     from_addr=my_email,
+        #     to_addrs=my_email,
+        #     msg=f'Subject: New Contact!\n\n{contents}'
+        # )
+        # server.close()
         return render_template('contact.html', msg_sent=True, current_user=current_user)
     else:
         return render_template('contact.html', msg_sent=False, current_user=current_user)
