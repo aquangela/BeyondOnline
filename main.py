@@ -18,7 +18,8 @@ import os
 # smtplib.SMTP("smtp.gmail.com", port=587)
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+# app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
 ckeditor = CKEditor(app)
 Bootstrap(app)
 gravatar = Gravatar(app,
@@ -29,19 +30,18 @@ gravatar = Gravatar(app,
                     force_lower=False,
                     use_ssl=False,
                     base_url=None)
-app.config.update(dict(
-    DEBUG=True,
-    MAIL_SERVER='smtp.gmail.com',
-    MAILI_PORT=587,
-    MAIL_USE_TLS=True,
-    MAIL_USE_SSL=False,
-    MAIL_USERNAME='codingclass100days@gmail.com',
-    MAIL_PASSWORD='Hello123,./',
-))
+mail = Mail(app)
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'codingclass100days@gmail.com'
+app.config['MAIL_PASSWORD'] = 'Hello123,./'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///blog.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 login_manager = LoginManager()
@@ -197,7 +197,7 @@ def about():
 def contact():
     if request.method == 'POST':
         data = request.form
-        contents = Message('Hello', sender='codingclass100days@gmail.com', recipients='codingclass100days@gmail.com')
+        contents = Message('Hello', sender='codingclass100days@gmail.com', recipients=['codingclass100days@gmail.com'])
         contents.body = f"Name: {data['name']}\nEmail: {data['email']}\nMessage: {data['message']}"
         mail.send(contents)
         # contents = f"Name: {data['name']}\nEmail: {data['email']}\nMessage: {data['message']}"
