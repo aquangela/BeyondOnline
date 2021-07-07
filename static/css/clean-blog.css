@@ -538,6 +538,13 @@ footer .copyright {
   margin: 30px 80px 30px;
 }
 
+@media only screen and (max-width : 320px) {
+   img{
+     width: 100%;
+     height: auto;
+   }
+}
+
 #info {
   padding: 100px;
   text-align: center;
