@@ -1,0 +1,23 @@
+{% include "header.html" %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url({{ url_for('static', filename='img/streaming.jpeg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Live Streaming</h1>
+            <span class="subheading">YouTube.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<hr>
+  <!-- Main Content -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fAj9Rju7rsA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <hr>
+
+  {% include "footer.html" %}
