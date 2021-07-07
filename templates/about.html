@@ -1,0 +1,51 @@
+{% include "header.html" %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url({{ url_for('static', filename='img/about.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About US</h1>
+            <span class="subheading">This is what We do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CSS style sheets -->
+  <link rel="stylesheet" href="static/css/about.css">
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="about_us">
+<!--      <div class="col-lg-8 col-md-10 mx-auto">-->
+        <img class="church" src="static/img/church-img.png" alt="church_img">
+        <h3>我们渴望成为一间什么样的教会？</h3>
+        <p>超越空间的限制，依托网络传道、教导、牧养为未来各地的实体教会的预备根基，培养成熟和健康门徒， 差派开拓在各地建立教会。</p>
+        </div>
+      <div class="about_us">
+        <img class="ministry" src="static/img/preach.png" alt="ministry_img">
+        <h3>我们具体做什么？</h3>
+        <p>传扬福音带家人、同事和朋友与神和好，彼此相爱; 培养造就主耶稣的门徒，在家庭、职场、社会做盐做光; 造就领袖在所在城市开拓建立教会.</p>
+        </div>
+      <div class="about_us">
+        <img class="goal" src="static/img/goal-img.png" alt="goal_img">
+        <h3>我们具体做什么？</h3>
+        <p>为了帮助在各地职场的弟兄姊妹更好地明白神的话语， 满足各地牧羊和教导的缺乏， 我们决定使用网络平台传讲神的话语，系统牧养分散在各地的弟兄姊妹。</p>
+        </div>
+      <div class="about_us">
+        <img class="value" src="static/img/bible.png" alt="value_img">
+        <h3>我们为什么要做？</h3>
+          <p><strong>神的话语</strong>： 在异端邪说所充满的时代，宣讲全备的圣经教导;</p>
+        <p><strong>谨慎行道</strong>： 在言行不一的文化氛围中，培养言行一致的信徒;</p>
+        <p><strong>慷慨节制</strong>： 在追求肉体的享乐主义中，践行俭朴慷慨的生活;</p>
+        <p><strong>和好合一</strong>： 在疏离分裂和结党的世代，竭力连结众圣徒肢体;</p>
+      </div>
+    </div>
+
+  <hr>
+
+  {% include "footer.html" %}

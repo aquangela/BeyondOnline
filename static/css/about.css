@@ -1,0 +1,34 @@
+.about_us {
+  margin: 200px auto 200px auto;
+  width: 80%;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.about_us h3 {
+    color: #11999E;
+}
+
+.about_us p {
+    line-height: 2.5em;
+}
+
+.church {
+  float: left;
+  margin-right: 50px;
+}
+
+.ministry {
+  float: right;
+  margin-left: 50px;
+}
+
+.goal {
+  float: left;
+  margin-right: 50px;
+}
+
+.value {
+  float: right;
+  margin-left: 50px;
+}
