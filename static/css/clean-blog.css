@@ -491,6 +491,10 @@ footer .copyright {
   font-family: 'Montserrat', sans-serif;
 }
 
+.intro h3 {
+    color: #11999E;
+}
+
 .logo {
   width: 25%;
   border-radius: 100%;
@@ -501,6 +505,10 @@ footer .copyright {
 #testimonials {
   background-color: #fff;
   text-align: center;
+}
+
+#testimonials h2 {
+    color: #11999E;
 }
 
 .testimonial-text {
@@ -544,3 +552,6 @@ footer .copyright {
   font-family: 'Montserrat', sans-serif;
 }
 
+#info h2 {
+    color: #11999E;
+}
