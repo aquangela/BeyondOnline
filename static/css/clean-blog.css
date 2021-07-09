@@ -487,15 +487,19 @@ footer .copyright {
 .intro {
   margin: 100px auto 20px auto;
   width: 80%;
-  text-align: left;
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 
-.logo {
-  width: 25%;
+.intro-image {
+  width: 20%;
   border-radius: 100%;
-  float: left;
-  margin-right: 50px;
+  float: center;
+}
+
+.decor1-logo {
+  max-width: 100%;
+  width: 500px;
 }
 
 #testimonials {
@@ -527,13 +531,13 @@ footer .copyright {
   color: #4E89AE;
 }
 
-#decor {
+#decor2 {
   background-color: #fff;
   padding-bottom: 3%;
   text-align: center;
 }
 
-.decor-logo {
+.decor2-logo {
   max-width: 100%;
   width: 500px;
 }
