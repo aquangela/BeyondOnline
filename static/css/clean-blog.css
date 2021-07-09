@@ -503,6 +503,16 @@ footer .copyright {
   float: center;
 }
 
+#decor1 {
+  background-color: #fff;
+  text-align: center;
+}
+
+.decor1-logo {
+  max-width: 100%;
+  width: 500px;
+}
+
 #testimonials {
   background-color: #fff;
   text-align: center;
