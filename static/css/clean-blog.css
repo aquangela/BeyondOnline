@@ -484,6 +484,11 @@ footer .copyright {
   padding: 25px 35px;
 }
 
+#intro {
+  background-color: #fff;
+  text-align: center;
+}
+
 .intro {
   margin: 100px auto 20px auto;
   width: 80%;
