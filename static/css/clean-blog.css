@@ -485,6 +485,7 @@ footer .copyright {
 }
 
 #intro {
+  margin-top: 100px;
   background-color: #fff;
   text-align: center;
 }
@@ -500,11 +501,6 @@ footer .copyright {
   width: 20%;
   border-radius: 100%;
   float: center;
-}
-
-.decor1-logo {
-  max-width: 100%;
-  width: 500px;
 }
 
 #testimonials {
