@@ -534,8 +534,8 @@ footer .copyright {
 }
 
 .decor-logo {
-  border-radius: 30px;
-  margin: 30px 80px 30px;
+  max-width: 100%;
+  height: auto;
 }
 
 #info {
